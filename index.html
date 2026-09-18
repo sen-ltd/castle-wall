@@ -162,7 +162,7 @@
 <p>Five rungs, weakest first. <code>degree</code>: a wall takes no gaps, every other cell takes two or none. <code>arrow</code>: each number as an interval on its ray, forcing the rest of the ray when the count is met or when nothing may be spared. <code>parity</code>: each colour as <strong>four</strong> parity constraints — one per direction, all of them the same bit — plus the free even-crossing law, since a closed curve meets any straight line an even number of times and that holds on every row gap and column gap with no clue at all. <code>loop</code>: one loop, so a gap that would close a short circuit while another fragment is alive is unusable, and a fragment that can no longer reach the rest is dead. <code>probe</code>: assume a gap, run the cheap rungs, drop the assumption if the board dies.</p>
 <p>Two measurements, the same boards. Going up the ladder, the share of the answer's gaps that propagation alone settles from an empty board. Taking one rung out of the full ladder, what is left. At 6x6 the full ladder settles 100.0% and finishes 22 of 24 boards outright; at 8x8 the full ladder settles 100.0% and finishes 17 of 24 boards outright; at 10x10 the full ladder settles 48.1% and finishes 4 of 16 boards outright.</p>
 <p>The leave-one-out table is where the colour earns its keep. At 6x6 taking the <code>parity</code> rung out costs 0.0% — probing puts back everything the colours were saying. By 10x10 it costs 3.1%, and taking <code>arrow</code> out costs 12.5%. The same crossover as the clue-half ablation, from the other side: small boards do not need the colours, large ones do.</p>
-<p>The node counts are the ladder read as pruning. A search that knows only <code>degree</code> is hopeless — it runs out of its 120,000-node budget on every board above 6×6 — and each rung above it takes an order of magnitude off. Counts marked <code>≥</code> hit the budget.</p>
+<p>The node counts are the ladder read as pruning. A search that knows only <code>degree</code> is hopeless — it runs out of its 400,000-node budget on all 24 boards at 8x8 and all 16 boards at 10x10 — and each rung above it takes an order of magnitude off. A median marked <code>≥</code> is one where the median board itself ran out of budget, so the true figure is larger.</p>
 <table>
   <tr><th>grid</th><th><code>degree</code></th><th><code>arrow</code></th><th><code>parity</code></th><th><code>loop</code></th><th><code>probe</code></th></tr>
   <tr><th>6x6</th><td>37.5%</td><td>48.3%</td><td>52.5%</td><td>52.5%</td><td>100.0%</td></tr>
@@ -178,8 +178,8 @@
 <table>
   <tr><th>grid</th><th>median nodes, <code>degree</code></th><th>median nodes, <code>arrow</code></th><th>median nodes, <code>parity</code></th><th>median nodes, <code>loop</code></th><th>median nodes, <code>probe</code></th></tr>
   <tr><th>6x6</th><td>5,729</td><td>27</td><td>17</td><td>11</td><td>1</td></tr>
-  <tr><th>8x8</th><td>≥ 120,001</td><td>270</td><td>62</td><td>27</td><td>1</td></tr>
-  <tr><th>10x10</th><td>≥ 120,001</td><td>≥ 44,117</td><td>5,325</td><td>917</td><td>18</td></tr>
+  <tr><th>8x8</th><td>≥ 400,001</td><td>270</td><td>62</td><td>27</td><td>1</td></tr>
+  <tr><th>10x10</th><td>≥ 400,001</td><td>44,117</td><td>5,325</td><td>917</td><td>18</td></tr>
 </table>
 <h2>The dial has a fork in it, and the boards take the safe branch</h2>
 <p>Minimisation here is not "which cells carry a clue" — the cells are walls either way, and a wall blocks the loop whether or not it says anything. What comes off is <em>how much each wall tells you</em>: <code>full</code> (colour and number) down to <code>colour</code> (the bit alone) or <code>arrow</code> (the number alone, wall left grey), down to <code>wall</code> (a grey blank), down to <code>none</code>, which hands the cell back to the loop. Weakening only ever admits more answers, so the greedy pass has a fixed point and reaching it is the whole minimisation.</p>

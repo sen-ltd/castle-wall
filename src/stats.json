@@ -215,6 +215,20 @@
   "ladder": [
     {
       "size": "6x6",
+      "budget": {
+        "degree": 400000,
+        "arrow": 400000,
+        "parity": 400000,
+        "loop": 400000,
+        "probe": 3000
+      },
+      "medianCapped": {
+        "degree": false,
+        "arrow": false,
+        "parity": false,
+        "loop": false,
+        "probe": false
+      },
       "share": {
         "degree": 0.375,
         "arrow": 0.48333333333333334,
@@ -241,10 +255,26 @@
       },
       "solvedByProbe": 22,
       "boards": 24,
-      "aborted": {}
+      "aborted": {
+        "-arrow": 1
+      }
     },
     {
       "size": "8x8",
+      "budget": {
+        "degree": 400000,
+        "arrow": 400000,
+        "parity": 400000,
+        "loop": 400000,
+        "probe": 3000
+      },
+      "medianCapped": {
+        "degree": true,
+        "arrow": false,
+        "parity": false,
+        "loop": false,
+        "probe": false
+      },
       "share": {
         "degree": 0.3482142857142857,
         "arrow": 0.45535714285714285,
@@ -265,7 +295,7 @@
         "loop": 0.6339285714285714
       },
       "withoutNodes": {
-        "arrow": 400001,
+        "arrow": 20001,
         "parity": 94,
         "loop": 62
       },
@@ -273,11 +303,25 @@
       "boards": 24,
       "aborted": {
         "degree": 24,
-        "-arrow": 16
+        "-arrow": 23
       }
     },
     {
       "size": "10x10",
+      "budget": {
+        "degree": 400000,
+        "arrow": 400000,
+        "parity": 400000,
+        "loop": 400000,
+        "probe": 3000
+      },
+      "medianCapped": {
+        "degree": true,
+        "arrow": false,
+        "parity": false,
+        "loop": false,
+        "probe": false
+      },
       "share": {
         "degree": 0.3111111111111111,
         "arrow": 0.3583333333333333,
@@ -297,16 +341,11 @@
         "parity": 0.45,
         "loop": 0.4472222222222222
       },
-      "withoutNodes": {
-        "arrow": 400001,
-        "parity": 11705,
-        "loop": 5325
-      },
+      "withoutNodes": {},
       "solvedByProbe": 4,
       "boards": 16,
       "aborted": {
-        "degree": 16,
-        "-arrow": 16
+        "degree": 16
       }
     }
   ],

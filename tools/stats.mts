@@ -365,16 +365,20 @@ interface RungRow {
   boards: number;
   /** searches that ran out of node budget, by rung */
   aborted: Record<string, number>;
+  /** the node budget each rung was given */
+  budget: Record<string, number>;
+  /** true when the median board itself hit the budget, so the median is a floor */
+  medianCapped: Record<string, boolean>;
 }
 // Probing is expensive per node — one probe pass is two propagations for every
 // undecided gap — so a search that probes gets a small budget and a search that
 // does not gets a large one. Budgets that bite are reported, not hidden.
 const BUDGET: Record<RuleSet, number> = {
-  degree: 120_000,
-  arrow: 120_000,
-  parity: 120_000,
-  loop: 120_000,
-  probe: 1_000,
+  degree: 400_000,
+  arrow: 400_000,
+  parity: 400_000,
+  loop: 400_000,
+  probe: 3_000,
 };
 /** The leave-one-out searches are the expensive ones; they get their own cap. */
 const ABLATION_BUDGET = 20_000;
@@ -414,8 +418,12 @@ for (const size of sizes) {
   }
   const med = (m: Record<string, number[]>): Record<string, number> =>
     Object.fromEntries(Object.entries(m).map(([k, v]) => [k, median(v)]));
+  const capped: Record<string, boolean> = {};
+  for (const [k, v] of Object.entries(nodes)) capped[k] = median(v) > BUDGET[k as RuleSet];
   ladder.push({
     size,
+    budget: { ...BUDGET },
+    medianCapped: capped,
     share: med(share),
     nodes: med(nodes),
     without: med(without),

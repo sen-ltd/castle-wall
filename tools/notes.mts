@@ -50,7 +50,6 @@ interface Section {
 }
 
 const sections: Section[] = [];
-const BUDGET_LOOP = 120_000;
 /** the solution-count cap used in the ablation; anything at it is a floor */
 const ANSWER_CAP = 500;
 const capped = (x: number): string => (x >= ANSWER_CAP ? `≥ ${n(x)}` : n(x));
@@ -241,7 +240,7 @@ const capped = (x: number): string => (x >= ANSWER_CAP ? `≥ ${n(x)}` : n(x));
       `Five rungs, weakest first. <code>degree</code>: a wall takes no gaps, every other cell takes two or none. <code>arrow</code>: each number as an interval on its ray, forcing the rest of the ray when the count is met or when nothing may be spared. <code>parity</code>: each colour as <strong>four</strong> parity constraints — one per direction, all of them the same bit — plus the free even-crossing law, since a closed curve meets any straight line an even number of times and that holds on every row gap and column gap with no clue at all. <code>loop</code>: one loop, so a gap that would close a short circuit while another fragment is alive is unusable, and a fragment that can no longer reach the rest is dead. <code>probe</code>: assume a gap, run the cheap rungs, drop the assumption if the board dies.`,
       `Two measurements, the same boards. Going up the ladder, the share of the answer's gaps that propagation alone settles from an empty board. Taking one rung out of the full ladder, what is left. At ${S.ladder.map((r: any) => `${r.size} the full ladder settles ${pct(r.share.probe)} and finishes ${r.solvedByProbe} of ${r.boards} boards outright`).join('; at ')}.`,
       `The leave-one-out table is where the colour earns its keep. At ${S.ladder[0].size} taking the <code>parity</code> rung out costs ${pct(S.ladder[0].share.probe - S.ladder[0].without.parity)} — probing puts back everything the colours were saying. By ${last.size} it costs ${pct(last.share.probe - last.without.parity)}, and taking <code>arrow</code> out costs ${pct(last.share.probe - last.without.arrow)}. The same crossover as the clue-half ablation, from the other side: small boards do not need the colours, large ones do.`,
-      `The node counts are the ladder read as pruning. A search that knows only <code>degree</code> is hopeless — it runs out of its ${n(BUDGET_LOOP)}-node budget on every board above 6×6 — and each rung above it takes an order of magnitude off. Counts marked <code>≥</code> hit the budget.`,
+      `The node counts are the ladder read as pruning. A search that knows only <code>degree</code> is hopeless — it runs out of its ${n(S.ladder[0].budget.degree)}-node budget on ${S.ladder.filter((r: any) => r.aborted.degree).map((r: any) => `all ${r.aborted.degree} boards at ${r.size}`).join(' and ')} — and each rung above it takes an order of magnitude off. A median marked <code>≥</code> is one where the median board itself ran out of budget, so the true figure is larger.`,
     ],
     tables: [
       {
@@ -267,7 +266,7 @@ const capped = (x: number): string => (x >= ANSWER_CAP ? `≥ ${n(x)}` : n(x));
         body: S.ladder.map((r: any) => [
           r.size,
           ...Object.keys(r.nodes).map((k: string) =>
-            r.aborted[k] ? `≥ ${n(r.nodes[k])}` : n(r.nodes[k]),
+            r.medianCapped[k] ? `≥ ${n(r.nodes[k])}` : n(r.nodes[k]),
           ),
         ]),
       },

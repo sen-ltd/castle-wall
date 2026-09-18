@@ -196,7 +196,7 @@ Two measurements, the same boards. Going up the ladder, the share of the answer'
 The leave-one-out table is where the colour earns its keep. At 6x6 taking the `parity` rung out costs 0.0% — probing puts back everything the colours were saying. By 10x10 it costs 3.1%, and taking `arrow` out costs 12.5%. The same crossover as the clue-half ablation, from the other side: small boards do not need the colours, large ones do.
 
 
-The node counts are the ladder read as pruning. A search that knows only `degree` is hopeless — it runs out of its 120,000-node budget on every board above 6×6 — and each rung above it takes an order of magnitude off. Counts marked `≥` hit the budget.
+The node counts are the ladder read as pruning. A search that knows only `degree` is hopeless — it runs out of its 400,000-node budget on all 24 boards at 8x8 and all 16 boards at 10x10 — and each rung above it takes an order of magnitude off. A median marked `≥` is one where the median board itself ran out of budget, so the true figure is larger.
 
 
 | grid | `degree` | `arrow` | `parity` | `loop` | `probe` |
@@ -216,8 +216,8 @@ The node counts are the ladder read as pruning. A search that knows only `degree
 | grid | median nodes, `degree` | median nodes, `arrow` | median nodes, `parity` | median nodes, `loop` | median nodes, `probe` |
 | --- | --- | --- | --- | --- | --- |
 | 6x6 | 5,729 | 27 | 17 | 11 | 1 |
-| 8x8 | ≥ 120,001 | 270 | 62 | 27 | 1 |
-| 10x10 | ≥ 120,001 | ≥ 44,117 | 5,325 | 917 | 18 |
+| 8x8 | ≥ 400,001 | 270 | 62 | 27 | 1 |
+| 10x10 | ≥ 400,001 | 44,117 | 5,325 | 917 | 18 |
 
 ### The dial has a fork in it, and the boards take the safe branch
 
