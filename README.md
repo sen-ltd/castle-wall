@@ -254,3 +254,11 @@ The 5×5 inside-field cross-check in `stats.json` is the sweep checking itself: 
 ## Licence
 
 MIT.
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/castle-wall/
+- 📝 記事: https://qiita.com/sen-ltd/items/7c468a1170a8c1da315c
+- 📝 dev.to: https://dev.to/sendotltd/castle-wall-the-number-on-a-clue-can-never-tell-you-its-colour-5gol
+<!-- /sen-publish:links -->
