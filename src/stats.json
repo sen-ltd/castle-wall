@@ -1,0 +1,386 @@
+{
+  "generatedAt": "2026-09-18",
+  "census": [
+    {
+      "w": 2,
+      "h": 2,
+      "cycles": 1,
+      "unique": 1,
+      "rate": 1,
+      "minLoopUnique": 4,
+      "maxOffLoop": 0
+    },
+    {
+      "w": 2,
+      "h": 3,
+      "cycles": 3,
+      "unique": 2,
+      "rate": 0.6666666666666666,
+      "minLoopUnique": 4,
+      "maxOffLoop": 2
+    },
+    {
+      "w": 3,
+      "h": 3,
+      "cycles": 13,
+      "unique": 9,
+      "rate": 0.6923076923076923,
+      "minLoopUnique": 4,
+      "maxOffLoop": 5
+    },
+    {
+      "w": 3,
+      "h": 4,
+      "cycles": 40,
+      "unique": 30,
+      "rate": 0.75,
+      "minLoopUnique": 4,
+      "maxOffLoop": 8
+    },
+    {
+      "w": 4,
+      "h": 4,
+      "cycles": 213,
+      "unique": 139,
+      "rate": 0.6525821596244131,
+      "minLoopUnique": 4,
+      "maxOffLoop": 12
+    },
+    {
+      "w": 3,
+      "h": 5,
+      "cycles": 108,
+      "unique": 78,
+      "rate": 0.7222222222222222,
+      "minLoopUnique": 4,
+      "maxOffLoop": 11
+    },
+    {
+      "w": 4,
+      "h": 5,
+      "cycles": 1049,
+      "unique": 559,
+      "rate": 0.5328884652049571,
+      "minLoopUnique": 4,
+      "maxOffLoop": 16
+    },
+    {
+      "w": 3,
+      "h": 6,
+      "cycles": 275,
+      "unique": 175,
+      "rate": 0.6363636363636364,
+      "minLoopUnique": 4,
+      "maxOffLoop": 14
+    },
+    {
+      "w": 5,
+      "h": 5,
+      "cycles": 9349,
+      "unique": 4702,
+      "rate": 0.5029414910685635,
+      "minLoopUnique": 4,
+      "maxOffLoop": 21
+    }
+  ],
+  "orth": [
+    {
+      "w": 4,
+      "h": 4,
+      "pairs": 64,
+      "samples": 4464,
+      "insideRate": 0.1003584229390681,
+      "parityAgreement": 0.7401433691756273,
+      "miMean": 0.0023407679320842883,
+      "miMax": 0.018726143456674317,
+      "controlMiMean": 0.23325632383982284,
+      "entropyMean": 0.23325632383982284
+    },
+    {
+      "w": 5,
+      "h": 5,
+      "pairs": 100,
+      "samples": 281812,
+      "insideRate": 0.1905525669595333,
+      "parityAgreement": 0.6842008147275489,
+      "miMean": 0.005056423776265072,
+      "miMax": 0.03356649545649855,
+      "controlMiMean": 0.28075729610068084,
+      "entropyMean": 0.28075729610068084
+    }
+  ],
+  "field": {
+    "w": 5,
+    "h": 5,
+    "off": [
+      5238,
+      2816,
+      2200,
+      2816,
+      5238,
+      2816,
+      1905,
+      2006,
+      1905,
+      2816,
+      2200,
+      2006,
+      2529,
+      2006,
+      2200,
+      2816,
+      1905,
+      2006,
+      1905,
+      2816,
+      5238,
+      2816,
+      2200,
+      2816,
+      5238
+    ],
+    "inside": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1140,
+      1616,
+      1140,
+      0,
+      0,
+      1616,
+      2401,
+      1616,
+      0,
+      0,
+      1140,
+      1616,
+      1140,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "agrees": true
+  },
+  "ablation": [
+    {
+      "size": "6x6",
+      "boards": 24,
+      "clues": 154,
+      "coloured": 123,
+      "numbered": 122,
+      "fullUnique": 24,
+      "noColourUnique": 19,
+      "noArrowUnique": 0,
+      "wallsOnlyUnique": 0,
+      "noColourMedian": 1,
+      "noArrowMedian": 500,
+      "wallsOnlyMedian": 500
+    },
+    {
+      "size": "8x8",
+      "boards": 24,
+      "clues": 275,
+      "coloured": 213,
+      "numbered": 209,
+      "fullUnique": 24,
+      "noColourUnique": 12,
+      "noArrowUnique": 0,
+      "wallsOnlyUnique": 0,
+      "noColourMedian": 1.5,
+      "noArrowMedian": 500,
+      "wallsOnlyMedian": 500
+    },
+    {
+      "size": "10x10",
+      "boards": 16,
+      "clues": 261,
+      "coloured": 208,
+      "numbered": 205,
+      "fullUnique": 16,
+      "noColourUnique": 2,
+      "noArrowUnique": 0,
+      "wallsOnlyUnique": 0,
+      "noColourMedian": 14.5,
+      "noArrowMedian": 500,
+      "wallsOnlyMedian": 500
+    }
+  ],
+  "ladder": [
+    {
+      "size": "6x6",
+      "share": {
+        "degree": 0.375,
+        "arrow": 0.48333333333333334,
+        "parity": 0.525,
+        "loop": 0.525,
+        "probe": 1
+      },
+      "nodes": {
+        "degree": 5729,
+        "arrow": 27,
+        "parity": 17,
+        "loop": 11,
+        "probe": 1
+      },
+      "without": {
+        "arrow": 0.3916666666666667,
+        "parity": 1,
+        "loop": 0.7083333333333333
+      },
+      "withoutNodes": {
+        "arrow": 1472,
+        "parity": 17,
+        "loop": 17
+      },
+      "solvedByProbe": 22,
+      "boards": 24,
+      "aborted": {}
+    },
+    {
+      "size": "8x8",
+      "share": {
+        "degree": 0.3482142857142857,
+        "arrow": 0.45535714285714285,
+        "parity": 0.5625,
+        "loop": 0.5803571428571429,
+        "probe": 1
+      },
+      "nodes": {
+        "degree": 400001,
+        "arrow": 270,
+        "parity": 62,
+        "loop": 27,
+        "probe": 1
+      },
+      "without": {
+        "arrow": 0.3973214285714286,
+        "parity": 0.5758928571428572,
+        "loop": 0.6339285714285714
+      },
+      "withoutNodes": {
+        "arrow": 400001,
+        "parity": 94,
+        "loop": 62
+      },
+      "solvedByProbe": 17,
+      "boards": 24,
+      "aborted": {
+        "degree": 24,
+        "-arrow": 16
+      }
+    },
+    {
+      "size": "10x10",
+      "share": {
+        "degree": 0.3111111111111111,
+        "arrow": 0.3583333333333333,
+        "parity": 0.41388888888888886,
+        "loop": 0.41388888888888886,
+        "probe": 0.48055555555555557
+      },
+      "nodes": {
+        "degree": 400001,
+        "arrow": 44117,
+        "parity": 5325,
+        "loop": 917,
+        "probe": 18
+      },
+      "without": {
+        "arrow": 0.3555555555555555,
+        "parity": 0.45,
+        "loop": 0.4472222222222222
+      },
+      "withoutNodes": {
+        "arrow": 400001,
+        "parity": 11705,
+        "loop": 5325
+      },
+      "solvedByProbe": 4,
+      "boards": 16,
+      "aborted": {
+        "degree": 16,
+        "-arrow": 16
+      }
+    }
+  ],
+  "dial": [
+    {
+      "size": "6x6",
+      "seeds": 24,
+      "chainClues": 6.416666666666667,
+      "forkClues": 6.416666666666667,
+      "chainLevels": {
+        "full": 119,
+        "wall": 32,
+        "colour": 3
+      },
+      "forkLevels": {
+        "arrow": 114,
+        "wall": 32,
+        "full": 5,
+        "colour": 3
+      }
+    },
+    {
+      "size": "8x8",
+      "seeds": 24,
+      "chainClues": 11.208333333333334,
+      "forkClues": 11.291666666666666,
+      "chainLevels": {
+        "wall": 45,
+        "full": 219,
+        "colour": 5
+      },
+      "forkLevels": {
+        "wall": 46,
+        "arrow": 209,
+        "full": 11,
+        "colour": 5
+      }
+    }
+  ],
+  "lengths": [
+    {
+      "size": "6x6",
+      "shippedMean": 16.416666666666668,
+      "shippedCoverage": 0.45601851851851855,
+      "samplerMean": 17.933333333333334,
+      "samplerCoverage": 0.4981481481481482,
+      "shippedClues": 6.416666666666667
+    },
+    {
+      "size": "8x8",
+      "shippedMean": 34.416666666666664,
+      "shippedCoverage": 0.5377604166666666,
+      "samplerMean": 35.13333333333333,
+      "samplerCoverage": 0.5489583333333333,
+      "shippedClues": 11.458333333333334
+    },
+    {
+      "size": "10x10",
+      "shippedMean": 54.875,
+      "shippedCoverage": 0.54875,
+      "samplerMean": 57.34,
+      "samplerCoverage": 0.5734,
+      "shippedClues": 16.3125
+    }
+  ],
+  "bankLevels": {
+    "none": 3310,
+    "full": 536,
+    "wall": 146,
+    "colour": 8
+  },
+  "colourSplit": {
+    "white": 128,
+    "black": 416,
+    "grey": 146
+  }
+}

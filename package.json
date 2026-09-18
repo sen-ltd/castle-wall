@@ -1,0 +1,26 @@
+{
+  "name": "castle-wall",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Castle Wall in the browser with a five-rung solver. One closed loop; each wall says how far the loop runs in one direction, and whether the wall itself ends up inside or outside. TypeScript, no runtime deps.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 4173",
+    "test": "vitest run",
+    "generate": "vite-node tools/generate.mts",
+    "count": "vite-node tools/count.mts",
+    "stats": "vite-node tools/stats.mts",
+    "notes": "vite-node tools/notes.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-node": "^2.1.5",
+    "vitest": "^2.1.5"
+  },
+  "license": "MIT"
+}
